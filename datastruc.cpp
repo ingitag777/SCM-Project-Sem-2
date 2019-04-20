@@ -17,4 +17,27 @@ Node* newnode(int x)
 	p->next=NULL;
 	return(p);
 }
+void push(Node *q)
+{
+	if(top==NULL)
+		top=q;
+	else
+	{
+		q->next=top;
+		top=q;
+	}
+}
+ 
+void pop(){
+	if(top==NULL){
+		cout<<"Stack is empty!!";
+	}
+	else{
+		cout<<"Deleted element is "<<top->data;
+		p=top;
+		top=top->next;
+		delete(p);
+	}
+}
+ 
 
