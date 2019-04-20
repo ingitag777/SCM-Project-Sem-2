@@ -40,4 +40,20 @@ void pop(){
 	}
 }
  
-
+void showstack()
+{
+	Node *q;
+	q=top;
+ 
+	if(top==NULL){
+		cout<<"Stack is empty!!";
+	}
+	else{
+		while(q!=NULL)
+		{
+			cout<<q->data<<" ";
+			q=q->next;
+		}		
+	}
+}
+ 
