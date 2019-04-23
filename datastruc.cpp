@@ -183,3 +183,15 @@ void double_llist::reverse()
     start = p1;
     cout<<"List Reversed"<<endl;
 }
+
+void double_llist::count()
+{
+    struct node *q = start;
+    int cnt = 0;
+    while (q != NULL)
+    {
+        q = q->next;
+        cnt++;
+    }
+    cout<<"Number of elements are: "<<cnt<<endl;
+}
