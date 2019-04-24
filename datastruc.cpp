@@ -106,6 +106,51 @@ void List::create()
     }
 }
 
+void List::insert()
+{
+    Node *prev,*cur;
+    prev=NULL;
+    cur=first;
+    int count=1,pos,ch,n;
+    Node *temp=new Node;
+    cout<<"\nEnter an Element:";
+    cin>>n;
+    temp->info=n;
+    temp->next=NULL;
+    cout<<"\nINSERT AS\n1:FIRSTNODE\n2:LASTNODE\n3:IN BETWEEN FIRST&LAST NODES";
+    cout<<"\nEnter Your Choice:";
+    cin>>ch;
+    switch(ch)
+    {
+    case 1:
+        temp->next=first;
+        first=temp;
+        break;
+    case 2:
+        last->next=temp;
+        last=temp;
+        break;
+    case 3:
+        cout<<"\nEnter the Position to Insert:";
+        cin>>pos;
+        while(count!=pos)
+        {
+            prev=cur;
+            cur=cur->next;
+            count++;
+        }
+        if(count==pos)
+        {
+            prev->next=temp;
+            temp->next=cur;
+        }
+        else
+            cout<<"\nNot Able to Insert";
+        break;
+
+    }
+}
+
 
 int main()
 
