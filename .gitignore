@@ -1,0 +1,3 @@
+*.text
+*.exe
+!datastruc.cpp
