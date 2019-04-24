@@ -87,6 +87,53 @@ class double_llist
             start = NULL;  
         }
 };
+
+/*
+ * Create Double Link List
+ */
+void double_llist::create_list(int value)
+{
+    struct dnode *s, *temp;
+    temp = new(struct dnode);
+    temp->info = value;
+    temp->next = NULL;
+    if (start == NULL)
+    {
+        temp->prev = NULL;
+        start = temp;
+    }
+    else
+    {
+        s = start;
+        while (s->next != NULL)
+            s = s->next;
+        s->next = temp;
+        temp->prev = s;
+    }
+}
+
+/*
+ * Insertion at the beginning
+ */
+void double_llist::add_begin(int value)
+{
+    if (start == NULL)
+    {
+        cout<<"First Create the list."<<endl;
+        return;
+    }
+    struct dnode *temp;
+    temp = new(struct dnode);
+    temp->prev = NULL;
+    temp->info = value;
+    temp->next = start;
+    start->prev = temp;
+    start = temp;
+    cout<<"Element Inserted"<<endl;
+}
+
+
+
 int main()
 {
 	int ch,x;
