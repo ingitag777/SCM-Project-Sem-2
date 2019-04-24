@@ -56,7 +56,38 @@ void showstack()
 		}		
 	}
 }
+
+
+//Singly linked list
+
+using namespace std;
+class Node
+{
+public:
+    int info;
+    Node* next;
+};
+class List:public Node
+{
+
+    Node *first,*last;
+public:
+    List()
+    {
+        first=NULL;
+        last=NULL;
+    }
+    void create();
+    void insert();
+    void delet();
+    void display();
+    void search();
+};
+
+
 int main()
+
+
 {
 	int ch,x;
 	Node *nptr;
