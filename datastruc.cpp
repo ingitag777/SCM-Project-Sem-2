@@ -152,6 +152,62 @@ void List::insert()
 }
 
 
+void List::delet()
+{
+    Node *prev=NULL,*cur=first;
+    int count=1,pos,ch;
+    cout<<"\nDELETE\n1:FIRSTNODE\n2:LASTNODE\n3:IN BETWEEN FIRST&LAST NODES";
+    cout<<"\nEnter Your Choice:";
+    cin>>ch;
+    switch(ch)
+    {
+    case 1:
+        if(first!=NULL)
+        {
+            cout<<"\nDeleted Element is "<<first->info;
+            first=first->next;
+        }
+        else
+            cout<<"\nNot Able to Delete";
+        break;
+    case 2:
+        while(cur!=last)
+        {
+            prev=cur;
+            cur=cur->next;
+        }
+        if(cur==last)
+        {
+            cout<<"\nDeleted Element is: "<<cur->info;
+            prev->next=NULL;
+            last=prev;
+        }
+        else
+            cout<<"\nNot Able to Delete";
+        break;
+    case 3:
+        cout<<"\nEnter the Position of Deletion:";
+        cin>>pos;
+        while(count!=pos)
+        {
+            prev=cur;
+            cur=cur->next;
+            count++;
+        }
+        if(count==pos)
+        {
+            cout<<"\nDeleted Element is: "<<cur->info;
+            prev->next=cur->next;
+        }
+        else
+            cout<<"\nNot Able to Delete";
+        break;
+    }
+}
+
+
+
+
 int main()
 
 
