@@ -216,6 +216,63 @@ void double_llist::delete_element(int value)
     cout<<"Element "<<value<<" not found"<<endl;
 }
 
+/*
+ * Display elements of Doubly Link List
+ */
+void double_llist::display_dlist()
+{
+    struct dnode *q;
+    if (start == NULL)
+    {
+        cout<<"List empty,nothing to display"<<endl;
+        return;
+    }
+    q = start;
+    cout<<"The Doubly Link List is :"<<endl;
+    while (q != NULL)
+    {
+        cout<<q->info<<" <-> ";
+        q = q->next;
+    }
+    cout<<"NULL"<<endl;
+}
+ 
+/*
+ * Number of elements in Doubly Link List
+ */
+void double_llist::count()
+{ 	
+    struct dnode *q = start;
+    int cnt = 0;
+    while (q != NULL)
+    {
+        q = q->next;
+        cnt++;
+    }
+    cout<<"Number of elements are: "<<cnt<<endl;
+}
+ 
+/*
+ * Reverse Doubly Link List
+ */
+void double_llist::reverse()
+{
+    struct dnode *p1, *p2;
+    p1 = start;
+    p2 = p1->next;
+    p1->next = NULL;
+    p1->prev = p2;
+    while (p2 != NULL)
+    {
+        p2->prev = p2->next;
+        p2->next = p1;
+        p1 = p2;
+        p2 = p2->prev; 
+    }
+    start = p1;
+    cout<<"List Reversed"<<endl; 
+}
+
 int main()
 {
 	int ch,x;
