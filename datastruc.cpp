@@ -1,7 +1,7 @@
 //Implement the operations of a dynamically allocated Stack data structure using a self-referential structure and single Linked List.
 #include<iostream>
 #include<cstdlib>
- 
+#include<cstdio> 
 using namespace std;
  
 struct Node
@@ -56,6 +56,37 @@ void showstack()
 		}		
 	}
 }
+
+/*
+ * Node Declaration
+ */
+
+struct dnode
+{
+    int info;
+    struct dnode *next;
+    struct dnode *prev;
+}*start;
+ 
+/*
+ Class Declaration 
+ */
+class double_llist
+{
+    public:
+        void create_list(int value);
+        void add_begin(int value);
+        void add_after(int value, int position);
+        void delete_element(int value);
+        void search_element(int value);
+        void display_dlist();
+        void count();
+        void reverse();
+        double_llist()
+        {
+            start = NULL;  
+        }
+};
 int main()
 {
 	int ch,x;
