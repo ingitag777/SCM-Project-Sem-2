@@ -84,6 +84,28 @@ public:
     void search();
 };
 
+void List::create()
+{
+    Node *temp;
+    temp=new Node;
+    int n;
+    cout<<"\nEnter an Element:";
+    cin>>n;
+    temp->info=n;
+    temp->next=NULL;
+    if(first==NULL)
+    {
+        first=temp;
+        last=first;
+    }
+
+    else
+    {
+        last->next=temp;
+        last=temp;
+    }
+}
+
 
 int main()
 
